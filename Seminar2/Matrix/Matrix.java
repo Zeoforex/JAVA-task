@@ -1,4 +1,4 @@
-package Seminar.Matrix;
+package Seminar2.Matrix;
 import java.util.Arrays;
 
 public class Matrix {
