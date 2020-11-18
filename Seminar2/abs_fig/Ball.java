@@ -1,7 +1,12 @@
-package Seminar2.figures;
+package Seminar2.abs_fig;
 
 public class Ball extends Solid {
-    Ball(double radius){
-        super(radius, Math.PI*Math.pow(radius,3)*4/3);
+    @Override
+    public double getVolume(){
+        return Math.PI * Math.pow(radius, 3) * 4 / 3;
+    }
+
+    public Ball(double radius){
+        super(radius);
     }
 }

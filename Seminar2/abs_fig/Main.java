@@ -1,4 +1,4 @@
-package Seminar2.figures;
+package Seminar2.abs_fig;
 
 import java.util.Scanner;
 

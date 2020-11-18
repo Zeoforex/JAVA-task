@@ -1,11 +1,10 @@
-package Seminar2.figures;
+package Seminar2.abs_fig;
+import Seminar2.abs_fig.Shape;
 
-public class Solid extends Shape {
-    private double radius;
+abstract class Solid extends Shape {
+    protected double radius;
 
-    public Solid(double radius, double volume){
-        super(volume);
-        System.out.println("Значение объекта -- " + volume);
+    public Solid(double radius){
         this.radius = radius;
     }
     public double getRadius() {

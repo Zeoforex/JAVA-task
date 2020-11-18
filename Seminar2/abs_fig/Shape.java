@@ -1,12 +1,5 @@
-package Seminar2.figures;
+package Seminar2.abs_fig;
 
-public class Shape {
-    // Наследники его это Pyramid,Solid,Box
-    private double volume;
-    public Shape (double volume){
-        this.volume = volume;
-    }
-    public double getVolume(){
-        return volume;
-    }
+abstract class Shape {
+    public abstract double getVolume();
 }
