@@ -1,4 +1,4 @@
-package DZ3.Task2;
+package homework_three.Task2;
 import java.util.LinkedList;
 import java.util.ArrayList;
 

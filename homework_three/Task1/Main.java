@@ -1,4 +1,4 @@
-package DZ3.Task1;
+package homework_three.Task1;
 import java.util.Collection;
 import java.util.HashSet;
 public class Main {
