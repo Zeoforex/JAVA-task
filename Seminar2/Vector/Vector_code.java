@@ -1,5 +1,5 @@
 package Seminar2.Vector;
-import java.util.Arrays;
+
 
 public class Vector_code {
     private double x;
