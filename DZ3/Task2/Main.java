@@ -29,7 +29,7 @@ public class Main {
         System.out.println("Вермя ArrayList: " + arrayTime);
 
         startTime = System.currentTimeMillis();
-        for(int i=0; i<M;i++){
+        for(int i=0; i<N; i++){
             linkedList.get((int) Math.random()*(M-1));
         }
         linkedTime = System.currentTimeMillis() - startTime;
