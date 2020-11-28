@@ -10,5 +10,5 @@ import java.util.NoSuchElementException;
 //Напишите поверх этого итератора другой, уже «плоский»
 
 public class My implements Iterator<String>{
-    
+
 }
