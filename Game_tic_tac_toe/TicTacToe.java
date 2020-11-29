@@ -1,5 +1,7 @@
 package Game_tic_tac_toe;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.*;
 
 public class TicTacToe {
@@ -26,8 +28,20 @@ public class TicTacToe {
                 System.out.println("Не выиграл. А значит либо ничья либо проигрыш");
                 break;
             }
+            my_computer();
+            printTable();
+            if (win(signO)){
+                System.out.println("МАШИНА схавала тебя. Нужно лучше играть");
+                break;
+            }
+            if (loss()){
+                System.out.println("нет победы. Либо встрял либо ничья либо херня");
+                break;
+            }
 
         }
+        System.out.println("Игра чет завершилась ваяя");
+        printTable();
     }
     void drawTable(){
         for (int r = 0; r < 3;r++){
@@ -60,7 +74,13 @@ public class TicTacToe {
         }
         return table[y][x] == signEmpty;
     }
-    void my(){
+    void my_computer(){
+        int x,y;
+        do {
+            x = random.nextInt(3);
+            y = random.nextInt(3);
+        }while(!checkingValue(x,y));
+        table[y][x]=signO;
 
     }
     boolean loss(){
