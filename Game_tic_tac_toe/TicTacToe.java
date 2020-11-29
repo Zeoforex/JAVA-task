@@ -1,7 +1,6 @@
 package Game_tic_tac_toe;
 
-import org.w3c.dom.ls.LSOutput;
-
+//пока не хватает доп условия для проверки если по диагонали выигрыш
 import java.util.*;
 
 public class TicTacToe {
