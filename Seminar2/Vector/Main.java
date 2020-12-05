@@ -1,8 +1,9 @@
 package Seminar2.Vector;
+
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         double x1 = 2;
         double y1 = 4;
         double z1 = 1.2;
@@ -20,17 +21,17 @@ public class Main {
         double length_v2 = second_vector.length_vector();
         System.out.println("c) Скалярное произведение двух векторов равно" + scalar);
 
-        Vector_code.actions(first_vector,second_vector,2);
-        Vector_code.actions(first_vector,second_vector,1);
-        String cosinus = Double.toString(scalar/length_v1*length_v2);
-        System.out.println("e) Косинус угла равен "+cosinus);
+        Vector_code.actions(first_vector, second_vector, 2);
+        Vector_code.actions(first_vector, second_vector, 1);
+        String cosinus = Double.toString(scalar / length_v1 * length_v2);
+        System.out.println("e) Косинус угла равен " + cosinus);
 
         System.out.println("g) Размер массива плиз");
         int n = scanner.nextInt();
         Vector_code[] vectors = Vector_code.vector_g(n);
         System.out.println("Вывести содержимое? Нажми на y");
         String s = scanner.next();
-        if (s.equals("y")){
+        if (s.equals("y")) {
             Vector_code.print_my_vectors(vectors);
         }
     }

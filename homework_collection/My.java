@@ -9,6 +9,6 @@ import java.util.NoSuchElementException;
 //(то есть который опять возвращает или String, или такой же итератор).
 //Напишите поверх этого итератора другой, уже «плоский»
 
-public class My implements Iterator<String>{
+public class My implements Iterator<String> {
 
 }

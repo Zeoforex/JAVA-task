@@ -13,8 +13,9 @@ public class iteratortwo<T> implements Iterator<T> {
         this.iterator1 = iterator1;
         this.iterator2 = iterator2;
     }
+
     @Override
-    public boolean hasNext(){
+    public boolean hasNext() {
         while (iterator1.hasNext()) {
             return true;
         }
@@ -27,7 +28,7 @@ public class iteratortwo<T> implements Iterator<T> {
 
     @Override
     public T next() {
-        if (!hasNext()){
+        if (!hasNext()) {
             throw new NoSuchElementException();
         }
         while (iterator1.hasNext()) {

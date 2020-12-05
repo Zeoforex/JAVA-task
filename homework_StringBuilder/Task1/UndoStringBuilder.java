@@ -4,7 +4,9 @@ package homework_StringBuilder.Task1;
 Делегировать стандартные методы стандартному StringBUilder
 Паттерн «Команда»
  */
+
 import java.util.Stack;
+
 public class UndoStringBuilder {
     private interface Action {
         void undo();
@@ -43,48 +45,51 @@ public class UndoStringBuilder {
         return this;
     }
 
-    public UndoStringBuilder append(String str){
+    public UndoStringBuilder append(String str) {
         stringBuilder.append(str);
         Action action = new Action() {
             @Override
             public void undo() {
-                stringBuilder.delete(stringBuilder.length()-str.length()-1,stringBuilder.length());
+                stringBuilder.delete(stringBuilder.length() - str.length() - 1, stringBuilder.length());
             }
         };
         actions.add(action);
         return this;
     }
 
-    public UndoStringBuilder delete(int start, int end){
-        String deleted = stringBuilder.substring(start,end);
+    public UndoStringBuilder delete(int start, int end) {
+        String deleted = stringBuilder.substring(start, end);
         stringBuilder.delete(start, end);
-        actions.add(() -> stringBuilder.insert(start,deleted));
+        actions.add(() -> stringBuilder.insert(start, deleted));
         return this;
     }
 
-    public UndoStringBuilder replace(int start, int end, String str){
+    public UndoStringBuilder replace(int start, int end, String str) {
         String deleted = stringBuilder.substring(start, end);
-        stringBuilder.replace(start,end,str);
-        actions.add(() -> stringBuilder.replace(start,end,deleted));
+        stringBuilder.replace(start, end, str);
+        actions.add(() -> stringBuilder.replace(start, end, deleted));
         return this;
     }
-    public UndoStringBuilder insert(int index, char[] str, int offset, int len){
+
+    public UndoStringBuilder insert(int index, char[] str, int offset, int len) {
         stringBuilder.insert(index, str, offset, len);
         actions.add(() -> stringBuilder.delete(index, len));
         return this;
     }
+
     public UndoStringBuilder insert(int offset, String str) {
         stringBuilder.insert(offset, str);
-        actions.add(() -> stringBuilder.delete(offset,str.length()));
+        actions.add(() -> stringBuilder.delete(offset, str.length()));
         return this;
     }
-    public void undo(){
-        if (!actions.isEmpty()){
+
+    public void undo() {
+        if (!actions.isEmpty()) {
             actions.pop().undo();
         }
     }
 
-    public String toString(){
+    public String toString() {
         return stringBuilder.toString();
     }
 

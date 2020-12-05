@@ -3,16 +3,16 @@ package Seminar2.figures;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Box box = new Box(1250);
         Scanner scanner = new Scanner(System.in);
         boolean r = true;
         int zz = 0;
-        while (true){
-            zz= zz + 1;
+        while (true) {
+            zz = zz + 1;
             System.out.println("Введите тип фигурки ");
             String state = scanner.next();
-            switch (state){
+            switch (state) {
                 case "шар":
                     System.out.println("Введите радиус");
                     double radius = scanner.nextDouble();
@@ -24,7 +24,7 @@ public class Main {
                     double s = scanner.nextDouble();
                     System.out.println("Введи высоту");
                     double h = scanner.nextDouble();
-                    Pyramid pyramid = new Pyramid(s,h);
+                    Pyramid pyramid = new Pyramid(s, h);
                     r = box.add(pyramid);
                     break;
 
@@ -33,7 +33,7 @@ public class Main {
                     h = scanner.nextDouble();
                     System.out.println("Введите радиус");
                     radius = scanner.nextDouble();
-                    Cylinder cylinder = new Cylinder(h,radius);
+                    Cylinder cylinder = new Cylinder(h, radius);
                     r = box.add(cylinder);
                     break;
 
@@ -41,7 +41,7 @@ public class Main {
                     break;
             }
             if (!r) {
-                System.out.println("Переполнен"+zz);
+                System.out.println("Переполнен" + zz);
                 break;
             }
         }

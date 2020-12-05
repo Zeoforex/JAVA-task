@@ -1,4 +1,5 @@
 package homework_StringBuilder.Task2;
+
 import java.util.*;
 
 public class Main {
@@ -7,7 +8,7 @@ public class Main {
         sss.setChangedOnListener(new OurListener());
         Scanner scaner = new Scanner(System.in);
         boolean flag = true;
-        while (flag){
+        while (flag) {
             System.out.println("Введите 1, если хотите продолжить работу с программой, другой ввод будет расцениваться как нежелание:");
             int intInput1 = scaner.nextInt();
             if (intInput1 == 1) {

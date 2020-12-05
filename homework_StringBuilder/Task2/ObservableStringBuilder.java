@@ -1,4 +1,5 @@
 package homework_StringBuilder.Task2;
+
 import java.util.Stack;
 
 /*
@@ -8,7 +9,7 @@ import java.util.Stack;
 Паттерн «Наблюдатель»
  */
 
-interface ChangedOnStringBuilderListener{
+interface ChangedOnStringBuilderListener {
     void changedOn(ObservableStringBuilder stringBuilder);
 }
 
@@ -21,43 +22,52 @@ public class ObservableStringBuilder {
     public void setChangedOnListener(ChangedOnStringBuilderListener changedOnListener) {
         this.changedOnListener = changedOnListener;
     }
-    public ObservableStringBuilder(){
+
+    public ObservableStringBuilder() {
         stringBuilder = new StringBuilder();
     }
-    private void notification(){
+
+    private void notification() {
         if (changedOnListener != null) {
             changedOnListener.changedOn(this);
         }
     }
-    public ObservableStringBuilder append(Object obj){
+
+    public ObservableStringBuilder append(Object obj) {
         stringBuilder.append(obj);
         notification();
         return this;
     }
-    public ObservableStringBuilder replace(int start, int end, String str){
-        stringBuilder.replace(start,end,str);
+
+    public ObservableStringBuilder replace(int start, int end, String str) {
+        stringBuilder.replace(start, end, str);
         notification();
         return this;
     }
-    public ObservableStringBuilder reverse(){
+
+    public ObservableStringBuilder reverse() {
         stringBuilder.reverse();
         notification();
         return this;
     }
-    public String toString(){
+
+    public String toString() {
         return stringBuilder.toString();
     }
+
     public ObservableStringBuilder insert(int index, char[] str, int offset, int len) {
         stringBuilder.insert(index, str, offset, len);
         notification();
         return this;
     }
+
     public ObservableStringBuilder deleteCharAt(int index) {
         stringBuilder.deleteCharAt(index);
         notification();
         return this;
     }
 }
+
 class OurListener implements ChangedOnStringBuilderListener {
     /*
         Определяем метод changedOn (смена состояния), в который передаётся наша строка, а точнее StringBuilder,

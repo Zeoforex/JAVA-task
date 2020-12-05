@@ -1,6 +1,8 @@
 package homework_three.Task1;
+
 import java.util.Collection;
 import java.util.HashSet;
+
 public class Main {
     public static void main(String[] args) {
         //1 Напишите метод, который принимает коллекцию и возвращает коллекцию без дубликатов
