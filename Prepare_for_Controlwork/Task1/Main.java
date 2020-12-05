@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 public class Main {
@@ -46,6 +45,7 @@ public class Main {
         for (int i = 0; i < 3; i++){
             System.out.println("Имя работника"+list.get(i).getName());
         }
+
 
     }
 }
